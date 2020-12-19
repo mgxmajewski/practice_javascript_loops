@@ -1,6 +1,7 @@
 const main = document.querySelector('main');
 const randomNumber = getRandomNumber(10);
 let guess;
+let triesCount = 1;
 
 function getRandomNumber(upper) {
   return Math.floor( Math.random() * upper ) + 1;
@@ -8,9 +9,10 @@ function getRandomNumber(upper) {
 
 do {
   guess = prompt("Guess a number");
+  triesCount++;
 } while ( parseInt(guess) !== randomNumber );
 
-main.innerHTML = `<h1>Yes it was ${randomNumber}</h1>`;
+main.innerHTML = `<h1>Yes it was ${randomNumber}, it took you ${triesCount} number of times!</h1>`;
 
 
 
