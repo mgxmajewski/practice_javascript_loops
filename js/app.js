@@ -8,18 +8,15 @@ function getRandomNumber(upper) {
   return Math.floor( Math.random() * upper ) + 1;
 }
 
-do {
-  guess = prompt("Guess a number");
-  triesCount++;
+for (let i = 0; i <=10; i++) {
+ let guess = prompt("Guess a number");
   if ( parseInt(guess) === randomNumber ) {
-    message = `Yes it was ${randomNumber}, it took you ${triesCount} number of times!`;
+    message = `Yes it was ${randomNumber}, it took you ${i} number of times!`;
     break;
   } else {
     message = `No it was ${randomNumber}`;
   }
-
-
-} while ( parseInt(guess) !== randomNumber && triesCount < 10);
+}
 
 main.innerHTML = `<h1>${message}</h1>`;
 
